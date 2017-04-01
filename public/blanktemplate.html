@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>d3 Page Template</title>
+    <style>
+        /* Make the chart container fill the page using CSS. */
+        
+        body {
+            background: #fff;
+            font-family: 'Open-Sans', sans-serif;
+        }
+        
+        #container {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+                
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="lodash/lodash.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        var socket = io();
+        socket.on("connect", function () {
+            console.log("Auto refresh socket connected!")
+            socket.emit("makeconnection", 9999);
+        });
+
+        socket.on("refresh",function(){
+            console.log("Auto refresh on save!");
+            window.location.reload();
+        });      
+    </script>
+    <script type="text/javascript" src="moment/moment.min.js"></script>
+    <script id="code">
+        'use strict';
+        $(document).ready(function () {
+            //Put your d3 code here
+           
+        });
+        
+    </script>
+</body>
+
+</html>
